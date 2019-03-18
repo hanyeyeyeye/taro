@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>除_slice</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-490.000000, -29.000000)">
+            <g id="删除" transform="translate(491.000000, 30.000000)">
+                <circle id="Oval" stroke="#1DACFC" fill="#FFFFFF" cx="24" cy="24" r="24"></circle>
+                <path d="M11.7272727,22.7727273 L36.2727273,22.7727273 C36.9477273,22.7727273 37.5,23.325 37.5,24 C37.5,24.675 36.9477273,25.2272727 36.2727273,25.2272727 L11.7272727,25.2272727 C11.0522727,25.2272727 10.5,24.675 10.5,24 C10.5,23.325 11.0522727,22.7727273 11.7272727,22.7727273 Z" id="Combined-Shape" fill="#1DACFC"></path>
+            </g>
+        </g>
+    </g>
+</svg>
