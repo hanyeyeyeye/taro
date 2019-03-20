@@ -35,7 +35,8 @@ export default class Food extends Component{
     return Array.from(Array(Math.round(Math.random()*20)),
       (v,k)=>({
 
-        pid:selectCata.id,id:selectCata.id+'_'+k,
+        pid:selectCata.id,
+        id:selectCata.id+'_'+k,
         title:"分类"+selectCata.id+"菜品"+(k+1),
         solo:Math.round(Math.random()*50),
         price:Math.round(Math.random()*20),
@@ -48,15 +49,16 @@ export default class Food extends Component{
     this.setState({
       selectCata
     });
-    if(this.state.foodList.some(item => item.id===selectCata.id)){
-      arr=this.state.foodList.filter(item => item.id===selectCata.id);
+    if(this.state.foodList.some(item => item.pid===selectCata.id)){
+      arr=this.state.foodList.filter(item => item.pid===selectCata.id);
       this.setState({
         currentList:arr
       })
     }else{
-      arr=this.state.foodList.concat(this.getData(selectCata));
+      let temarr = this.getData(selectCata);
+      arr=this.state.foodList.concat(temarr);
       this.setState({
-        currentList:this.getData(selectCata),
+        currentList:temarr,
         foodList:arr
       })
     }

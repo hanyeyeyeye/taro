@@ -1,7 +1,9 @@
 import Taro,{ Component } from '@tarojs/taro';
-import { View, Text,Image } from '@tarojs/components';
-import './cata.less'
+import { View, Text } from '@tarojs/components';
+import {getEvent} from '../../utils/common';
+import './cata.less';
 
+let myEvent = getEvent();
 export default class Cata extends Component{
   constructor (){
     super(...arguments);
@@ -25,13 +27,15 @@ export default class Cata extends Component{
         selectCata:item
       },()=>{
         this.props.onChangeCata&&this.props.onChangeCata(this.state.selectCata)
-      })
+      });
+      myEvent.emit('change_cut')
     }else if(!selectCata){
       this.setState({
         selectCata:item
       },()=>{
         this.props.onChangeCata&&this.props.onChangeCata(this.state.selectCata)
       })
+      myEvent.emit('change_cut')
     }
   }
   componentDidMount(){
