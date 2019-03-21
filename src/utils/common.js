@@ -54,3 +54,25 @@ export function SetFoodCount(food,num,type,callback){
 export function getEvent(){
   return myEvent
 }
+
+export function GetAllFoodInfo(){
+  let store=Taro.getStorageSync(foodKey);
+  let total =0;
+  let numTotal=0;
+  if(store){
+    Object.keys(store).map((key)=>{
+
+      if(store[key]){
+
+        let {price,num} =store[key];
+        total+=price*num;
+        numTotal+=num;
+      }
+    });
+
+  };
+  return{
+    total,
+    numTotal
+  }
+}

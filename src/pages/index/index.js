@@ -4,6 +4,7 @@ import './index.less'
 
 import Head from '../../components/head/head';
 import Food from '../../components/food/food';
+import Bottom from '../../components/bottom/bottom';
 
 export default class Index extends Component {
 
@@ -26,6 +27,7 @@ export default class Index extends Component {
       <View className='index'>
         <Head></Head>
         <Food></Food>
+        <Bottom></Bottom>
       </View>
     )
   }

@@ -65,7 +65,7 @@ export default class Food extends Component{
   }
 
   render (){
-    let {current, tabList ,currentList ,selectCata} =this.state;
+    let {current, tabList ,currentList} =this.state;
     return (
       <View>
         <AtTabs current={current} tabList={tabList} onClick={this.handleClick}>
@@ -74,7 +74,6 @@ export default class Food extends Component{
               <Cata onChangeCata={this.changeCata.bind(this)} />
               <FoodList currentList={currentList} selectCata />
             </View>
-
           </AtTabsPane>
         </AtTabs>
       </View>

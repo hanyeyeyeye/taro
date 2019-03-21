@@ -17,7 +17,8 @@ export default class AddCut extends Component{
       SetFoodCount(this.props.food,this.state.count,'add',()=>{
         this.setState({
           count:count+1
-        })
+        });
+        myEvent.emit('changeCut');
       });
 
     }
@@ -30,8 +31,10 @@ export default class AddCut extends Component{
         SetFoodCount(this.props.food,this.state.count,'delete',()=>{
           this.setState({
             count:count-1
-          })
+          });
+          myEvent.emit('changeCut')
         });
+
       }
     }
   }
