@@ -72,7 +72,8 @@ export default class Food extends Component{
           <AtTabsPane>
             <View className={'food-body'}>
               <Cata onChangeCata={this.changeCata.bind(this)} />
-              <FoodList currentList={currentList} selectCata />
+
+              <FoodList currentList={currentList} selectCata style="width:100%"/>
             </View>
           </AtTabsPane>
         </AtTabs>

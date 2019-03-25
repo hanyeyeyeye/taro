@@ -25,7 +25,7 @@ export default class Head extends Component{
           <Top />
           <Image src={require('../../images/head/head-bg.jpg')} className={'bg-image'} />
           <View className={'store'}>
-            <Image src={require('../../images/head/rose.jpg')} className={'store-image'} />
+            <Image src={require('../../images/head/rose.jpg')} className='store-image' />
             <View className={'store-text'}>
               <Text>{store.title}</Text>
               <Text>{store.notice}</Text>
@@ -36,7 +36,7 @@ export default class Head extends Component{
             </View>
           </View>
           <Activity>
-            
+
           </Activity>
         </View>
 

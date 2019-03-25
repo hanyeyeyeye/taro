@@ -17,7 +17,7 @@ export default class Bottom extends Component{
     }
   }
 
-  componentDidMount(){
+  componentDidMount (){
     let {total,numTotal}=GetAllFoodInfo();
     this.setState({
       num:numTotal,
@@ -33,25 +33,44 @@ export default class Bottom extends Component{
   }
   render (){
     let {num,sendPrice,isSupport,sendMustPrice,totalPrice} =this.state;
+    let showNum=null,
+      imgSrc=null,
+      sendText=sendPrice?`另需配送费¥${sendPrice}  |  `:'',
+      showInfo=null,
+      showBtn=null,
+      sendMustPriceText=sendMustPrice?`¥${sendMustPrice}起送`:'',
+      showSupport=isSupport?'支持自取':'';
+
+    if (num==0){
+      showNum=''
+      imgSrc=require('../../images/bottom/car2.gif');
+    }else{
+      showNum=(<Text className='num'>4</Text>)
+      imgSrc=require('../../images/bottom/car1.gif')
+    };
+
+    if (totalPrice==0){
+      showInfo=(<Text>{sendText}</Text>);
+      showBtn=(<View className={'submit'}>{sendMustPriceText}</View>)
+    }else{
+      showInfo=(<Text className='price'>{`¥${totalPrice}`}</Text>);
+      showBtn=(<View className={'goPay'}>去结算</View>);
+    };
+
     return (
       <View className={'bottom'}>
         <View className={'bottom-body'}>
-          {num==0?'':<Text className={'num'}>{num}</Text>}
+          {/*{showNum}*/}
+          {/*{num==0?'':<Text className='num'>{num}</Text>}*/}
+          <Text className='num'>{num}</Text>
           <Image
-            src={require(num==0?'../../images/bottom/car2.gif':'../../images/bottom/car1.gif')}
+            src={imgSrc}
             className={'store-img'} />
           <View className={'info'}>
-            {totalPrice==0?
-              <Text>{sendPrice?`另需配送费¥${sendPrice}  |  `:''}</Text>:
-              <Text className={'price'}>{`¥${totalPrice}`}</Text>
-            }
-            <Text>{isSupport?'支持自取':''}</Text>
+            {showInfo}
+            <Text>{showSupport}</Text>
           </View>
-          {totalPrice==0?
-            <View className={'submit'}>{sendMustPrice?`¥${sendMustPrice}起送`:''}</View>:
-            <View className={'goPay'}>去结算</View>
-          }
-
+          {showBtn}
         </View>
 
       </View>
